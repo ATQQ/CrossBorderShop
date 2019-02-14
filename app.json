@@ -6,7 +6,11 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "海鸽",
     "navigationBarTextStyle":"black"
+  },
+  "usingComponents": {
+    "i-tab-bar": "dist/tab-bar/index",
+    "i-tab-bar-item": "../../dist/tab-bar-item/index"
   }
 }

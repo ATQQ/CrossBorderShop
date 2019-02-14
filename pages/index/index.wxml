@@ -1,13 +1,10 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class=''>
+<!-- 底部导航栏 -->
+  <i-tab-bar current="{{ current }}" bindchange="bottomPageChange" fixed="true">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="type" icon="service" current-icon="service_fill" title="分类"></i-tab-bar-item>
+    <i-tab-bar-item key="goods" icon="publishgoods_fill" current-icon="publishgoods_fill" count="1" title="购物车"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" dot title="我"></i-tab-bar-item>
+  </i-tab-bar>
 </view>

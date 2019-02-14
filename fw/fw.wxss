@@ -1,0 +1,7 @@
+.fw-fixed-bottom{
+  position: fixed;
+  bottom: 0px;
+}
+.fw-w100{
+  width: 100%;
+}
