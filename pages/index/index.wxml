@@ -1,5 +1,10 @@
 <!--index.wxml-->
 <view class=''>
+<!-- 顶部搜索栏 -->
+<view>
+
+</view>
+
 <!-- 底部导航栏 -->
   <i-tab-bar current="{{ current }}" bindchange="bottomPageChange" fixed="true">
     <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
