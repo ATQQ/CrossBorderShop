@@ -1,2 +1,2 @@
 /**index.wxss**/
-@import "../../fw/fw.wxss"
+@import "../../source/plunge/fw/fw.wxss"

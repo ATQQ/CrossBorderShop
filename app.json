@@ -10,7 +10,7 @@
     "navigationBarTextStyle":"black"
   },
   "usingComponents": {
-    "i-tab-bar": "dist/tab-bar/index",
-    "i-tab-bar-item": "../../dist/tab-bar-item/index"
+    "i-tab-bar": "source/plunge/iview/tab-bar/index",
+    "i-tab-bar-item": "source/plunge/iview/tab-bar-item/index"
   }
 }
