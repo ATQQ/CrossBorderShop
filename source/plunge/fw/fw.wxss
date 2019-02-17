@@ -5,3 +5,9 @@
 .fw-w100{
   width: 100%;
 }
+.fw-flex{
+  display: flex;
+}
+.fw-content-center{
+  justify-content: center;
+}
