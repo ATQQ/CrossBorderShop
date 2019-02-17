@@ -8,6 +8,31 @@
 .fw-flex{
   display: flex;
 }
-.fw-content-center{
+.fw-c-c{
   justify-content: center;
+}
+.fw-c-l{
+  justify-content: left;
+}
+.fw-c-sb{
+  justify-content: space-between;
+}
+.fw-warp{
+  flex-wrap: wrap;
+}
+.fw-bgc{
+  background-color: #f8f8f9 !important;
+}
+.fw-hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+.fw-margin-top-xs{
+  margin-top:16px; 
+}
+.fw-fdc{
+  flex-direction: column;
+}
+.fw-padding-default{
+  padding: 10px;
 }

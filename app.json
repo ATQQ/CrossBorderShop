@@ -1,16 +1,19 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "海豹",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "usingComponents": {
     "i-tab-bar": "source/plunge/iview/tab-bar/index",
-    "i-tab-bar-item": "source/plunge/iview/tab-bar-item/index"
+    "i-tab-bar-item": "source/plunge/iview/tab-bar-item/index",
+    "i-notice-bar": "source/plunge/iview/notice-bar/index",
+    "i-tabs": "source/plunge/iview/tabs/index",
+    "i-tab": "source/plunge/iview/tab/index"
   }
 }

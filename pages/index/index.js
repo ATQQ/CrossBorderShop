@@ -18,7 +18,11 @@ Page({
       {
         src: '../../source/image/swiper/test3.png'
       }
-    ]
+    ],
+    notice_text:"测试内容",
+    noticeArray:['111','asqee','fdfdg中文'],
+    tabscurrent: 'tab1',
+    tabscurrent_scroll: 'tab1'
   },
   // 小功能列表
   test:function(res){
@@ -29,6 +33,12 @@ Page({
     this.setData({
       current: detail.key
     });
+    console.log(detail);
+  },
+  tabsChangeScroll({ detail }) {
+    this.setData({
+      tabscurrent_scroll:detail.key
+    })
     console.log(detail);
   },
   clickScan:function(res){
@@ -53,6 +63,8 @@ Page({
       inputShowed: false
     });
   },
+  // tabs
+  
   clearInput: function () {
     this.setData({
       inputVal: ""
@@ -65,6 +77,16 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
-   
+    var that=this;
+    var count=0;
+  },
+  setNotice:function(index){
+    var that=this;
+
+    setTimeout((index)=>{
+      that.setData({
+
+      })
+    },2000)
   }
 })
