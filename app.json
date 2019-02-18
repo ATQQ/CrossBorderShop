@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/message/message",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/message/message",
     "pages/mine/mine",
     "pages/communicate/communicate"
   ],

@@ -1,1 +1,93 @@
-/* pages/message/message.wxss */
+.fw-fixed-bottom {
+  position: fixed;
+  bottom: 0px;
+}
+.fw-w100 {
+  width: 100%;
+}
+.fw-flex {
+  display: flex;
+}
+.fw-c-c {
+  justify-content: center;
+}
+.fw-c-l {
+  justify-content: left;
+}
+.fw-c-sb {
+  justify-content: space-between;
+}
+.fw-warp {
+  flex-wrap: wrap;
+}
+.fw-bgc {
+  background-color: #f8f8f9 !important;
+}
+.fw-hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+.fw-margin-top-xs {
+  margin-top: 16px;
+}
+.fw-fdc {
+  flex-direction: column;
+}
+.fw-padding-default {
+  padding: 10px;
+}
+#message-sv {
+  background-color: #e9eaec;
+  margin-bottom: 51px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#message-sv .message-item {
+  width: 90vw;
+  background-color: #fff;
+  border-radius: 0.8rem;
+  margin: 5px 0;
+  border: 1px solid #dddee1;
+  display: flex;
+  justify-content: left;
+}
+.message-head {
+  margin: 5px;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  width: 15vw;
+  height: 15vw;
+}
+.message-head image {
+  width: 100%;
+  height: 100%;
+}
+.message-text {
+  padding: 3px;
+  width: 72vw;
+  display: flex;
+  flex-direction: column;
+}
+.message-text .text-title {
+  margin: 2px 0;
+  display: border-box;
+}
+.message-text .text-title .nickname {
+  display: block;
+  float: left;
+  color: #2d8cf0;
+  margin-left: 10px;
+}
+.message-text .text-title .time {
+  margin-right: 10px;
+  display: block;
+  color: #80848f;
+  float: right;
+  font-size: 26rpx;
+  line-height: 48rpx;
+}
+.message-text .text-detail {
+  color: #495060;
+  padding: 0 4px;
+  font-size: 27rpx;
+}

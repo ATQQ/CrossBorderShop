@@ -1,6 +1,27 @@
 <!--pages/message/message.wxml-->
 <view>
-    <!-- 底部导航栏 -->
+	<scroll-view id='message-sv'>
+		<view class='fw-flex fw-c-c fw-warp'>
+			<block wx:for="{{20}}">
+				<view class='message-item'>
+					<view class='message-head'>
+						<image src="../../source/image/testpic.png" mode='scaleTofill' />
+					</view>
+					<view class='message-text'>
+						<view class='text-title'>
+							<text class='nickname'>昵称</text>
+							<text class='time'>2019-02-19,18:29</text>
+						</view>
+						<text class='text-detail'>这里是消息内容
+					</text>
+					</view>
+				</view>
+			</block>
+
+		</view>
+
+	</scroll-view>
+	<!-- 底部导航栏 -->
 	<i-tab-bar current="{{ bottomcurrent }}" bindchange="bottomPageChange" fixed="true">
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
@@ -32,3 +53,4 @@
 		</block>
 	</i-tab-bar>
 </view>
+
