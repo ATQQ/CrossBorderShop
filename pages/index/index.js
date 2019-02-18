@@ -1,13 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const { $Toast } = require('../../source/plunge/iview/base/index');
 Page({
   data: {
-    current: 'homepage',
+    bottomcurrent:'',
     inputShowed: false,
     inputVal: "",
-    power:1,
+    power:'',
     swiperItems:[
       {
         src:'../../source/image/swiper/test1.png'
@@ -27,13 +27,6 @@ Page({
   // 小功能列表
   test:function(res){
     console.log(res.currentTarget.dataset.key);
-  }
-  ,
-  bottomPageChange({ detail }) {
-    this.setData({
-      current: detail.key
-    });
-    console.log(detail);
   },
   tabsChangeScroll({ detail }) {
     this.setData({
@@ -63,8 +56,6 @@ Page({
       inputShowed: false
     });
   },
-  // tabs
-  
   clearInput: function () {
     this.setData({
       inputVal: ""
@@ -79,6 +70,20 @@ Page({
   onLoad: function () {
     var that=this;
     var count=0;
+    this.setData({
+      bottomcurrent: app.globalData.current,
+      power:app.globalData.power
+    })
+    $Toast({
+      content: '加载中',
+      type: 'loading'
+    });
+  },
+  /**
+  * 生命周期函数--监听页面初次渲染完成
+  */
+  onReady: function () {
+    $Toast.hide();
   },
   setNotice:function(index){
     var that=this;
@@ -88,5 +93,37 @@ Page({
 
       })
     },2000)
+  },
+  // 底部tabbars
+  bottomPageChange({ detail }) {
+    this.setData({
+      bottomcurrent: detail.key
+    });
+    switch (detail.key) {
+      case 'homepage':
+        wx.redirectTo({
+          url: '../index/index'
+        })
+        break;
+      case 'message':
+        wx.redirectTo({
+          url: '../message/message'
+        })
+        break;
+      case 'communicate':
+        wx.redirectTo({
+          url: '../communicate/communicate'
+        })
+        break;
+      case 'mine':
+        wx.redirectTo({
+          url: '../mine/mine'
+        })
+        break;
+      default:
+        break;
+    }
+    app.globalData.current = detail.key;
+    console.log(app.globalData.current);
   }
 })

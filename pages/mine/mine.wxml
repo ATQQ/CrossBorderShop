@@ -1,0 +1,35 @@
+<!--pages/mine/mine.wxml-->
+<text>pages/mine/mine.wxml</text>
+<view>
+    <!-- 底部导航栏 -->
+	<i-tab-bar current="{{ bottomcurrent }}" bindchange="bottomPageChange" fixed="true">
+		<block wx:if="{{power==1}}">
+			<i-tab-bar-item
+			 key="homepage"
+			 icon="homepage"
+			 current-icon="homepage_fill"
+			 title="首页"
+			/>
+			<i-tab-bar-item
+			 key="message"
+			 icon="message"
+			 current-icon="message_fill"
+			 title="消息"
+			/>
+			<i-tab-bar-item
+			 key="communicate"
+			 icon="interactive"
+			 current-icon="interactive_fill"
+			 count="1"
+			 title="交流"
+			/>
+			<i-tab-bar-item
+			 key="mine"
+			 icon="mine"
+			 current-icon="mine_fill"
+			 dot
+			 title="我的"
+			/>
+		</block>
+	</i-tab-bar>
+</view>

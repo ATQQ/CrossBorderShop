@@ -1,7 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/message/message",
+    "pages/mine/mine",
+    "pages/communicate/communicate"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,6 +17,8 @@
     "i-tab-bar-item": "source/plunge/iview/tab-bar-item/index",
     "i-notice-bar": "source/plunge/iview/notice-bar/index",
     "i-tabs": "source/plunge/iview/tabs/index",
-    "i-tab": "source/plunge/iview/tab/index"
+    "i-tab": "source/plunge/iview/tab/index",
+    "i-toast": "source/plunge/iview/toast/index",
+    "i-icon": "source/plunge/iview/icon/index"
   }
 }
