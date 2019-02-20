@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/message/message",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/mine/mine",
     "pages/communicate/communicate"
   ],
   "window": {

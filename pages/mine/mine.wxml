@@ -1,7 +1,59 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
 <view>
-    <!-- 底部导航栏 -->
+	<!-- 头部蓝色区域 -->
+	<view class='fw-w100 fw-b-primary' style='padding-bottom:25px;'>
+		<!-- 昵称头像区域 -->
+		<view class='fw-w100 fw-flex fw-c-l fw-padding-default'>
+			<!-- 头像图片 -->
+			<view class='head-pic fw-circle'>
+				<image src="../../source/image/testpic.png" mode='scaleTofill' />
+			</view>
+			<view class='head-text fw-margin-left-mini'>
+				<view class='fw-w100'>
+					<text class='nickname'>昵称</text>
+					<i-icon class='fw-fr fw-margin-right-mini' type="setup" size="28" color="#ffd" />
+				</view>
+				<view class='username'>
+					<text>accountusername</text>
+				</view>
+			</view>
+		</view>
+		<!--小功能区域1-->
+		<view class='fw-w100 fw-flex fw-c-c'>
+			<view class='fun-item fw-flex fw-fdc'>
+				<text class='count'>12</text>
+				<text class='name'>关注</text>
+			</view>
+		</view>
+	</view>
+
+	<view class='fw-w100 fw-flex fw-c-c fw-warp'  style='background-color:#e9eaec;'>
+		<!-- 会员-->
+		<view class='vip-area fw-flex card-area'>
+			<view class='left-area fw-flex fw-fdc'>
+				<text class='rank fw-text-c'>铂金会员</text>
+				<text class='score fw-text-c'>成长值 <text>999</text></text>
+			</view>
+			<view class='right-area fw-flex fw-fdc'>
+				<text class='tips fw-text-c'>一段提示文本</text>
+				<text class='goVip fw-text-c fw-c-primary'>进入会员中心</text>
+			</view>
+		</view>
+		<!-- 我的订单-->
+		<view class=' fw-flex card-area'>
+			<view class='left-area fw-flex fw-fdc'>
+				<text class='rank fw-text-c'>铂金会员</text>
+				<text class='score fw-text-c'>成长值 <text>999</text></text>
+			</view>
+			<view class='right-area fw-flex fw-fdc'>
+				<text class='tips fw-text-c'>一段提示文本</text>
+				<text class='goVip fw-text-c fw-c-primary'>进入会员中心</text>
+			</view>
+		</view>
+
+	</view>
+	
+	<!-- 底部导航栏 -->
 	<i-tab-bar current="{{ bottomcurrent }}" bindchange="bottomPageChange" fixed="true">
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
@@ -33,3 +85,4 @@
 		</block>
 	</i-tab-bar>
 </view>
+
