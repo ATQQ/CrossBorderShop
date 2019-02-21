@@ -7,7 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabscurrent_scroll: 'tab1'
+  },
+  tabsChangeScroll({ detail }) {
+    this.setData({
+      tabscurrent_scroll: detail.key
+    })
+    console.log(detail);
   },
   /**
    * 生命周期函数--监听页面加载

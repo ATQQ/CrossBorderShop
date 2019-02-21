@@ -1,7 +1,46 @@
 <!--pages/communicate/communicate.wxml-->
-<text>pages/communicate/communicate.wxml</text>
+<scroll-view scroll-y="true" id='message-sv'>
+	<!-- 分类导航区域 -->
+	<view>
+		<i-tabs current="{{ tabscurrent_scroll }}" scroll bindchange="tabsChangeScroll">
+			<i-tab key="tab1" title="全部" />
+			<i-tab key="tab10" title="选项1" />
+			<i-tab key="tab2" title="选项2" />
+			<i-tab key="tab3" title="选项3" />
+			<i-tab key="tab4" title="选项4" />
+			<i-tab key="tab5" title="选项5" />
+			<i-tab key="tab6" title="选项6" />
+			<i-tab key="tab7" title="选项7" />
+			<i-tab key="tab8" title="选项8" />
+			<i-tab key="tab9" title="选项9" />
+		</i-tabs>
+		<view class='fw-flex fw-c-c fw-warp fw-w100'>
+			<block wx:for="{{20}}">
+				<view class='message-item'>
+					<view class='message-head'>
+						<image src="../../source/image/testpic.png" mode='scaleTofill' />
+					</view>
+					<view class='message-text'>
+						<view class='text-title'>
+							<text class='nickname'>昵称</text>
+							<text class='time'>2019-02-19,18:29</text>
+						</view>
+						<text class='text-detail'>这里是消息内容
+					</text>
+					</view>
+				</view>
+			</block>
+
+		</view>
+	</view>
+</scroll-view>
+<!--发布信息按钮-->
+<view id='publish' class='fw-flex fw-wrap fw-c-c'>
+	<i-icon class='fw-w100 fw-text-c' type="praise_fill" size="22" color="#fff" />
+	<text class='fw-w100 fw-text-c' style='font-size:26rpx;'>发布</text>
+</view>
 <view>
-    <!-- 底部导航栏 -->
+	<!-- 底部导航栏 -->
 	<i-tab-bar current="{{ bottomcurrent }}" bindchange="bottomPageChange" fixed="true">
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
@@ -33,3 +72,4 @@
 		</block>
 	</i-tab-bar>
 </view>
+

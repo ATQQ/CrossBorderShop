@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/communicate/communicate",
     "pages/mine/mine",
     "pages/index/index",
     "pages/message/message",
-    "pages/logs/logs",
-    "pages/communicate/communicate"
-  ],
+    "pages/logs/logs"
+    ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
