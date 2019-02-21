@@ -158,11 +158,10 @@
   margin-bottom: -10px;
   position: relative;
   top: -18px;
-  border-radius: 1px solid #dddee1;
-  border-right: 1px solid #e9eaec;
 }
 .vip-area .left-area {
   width: 30%;
+  border-right: 1px solid #e9eaec;
 }
 .vip-area .left-area .rank {
   font-size: 32rpx;
@@ -178,4 +177,22 @@
 }
 .vip-area .right-area .goVip {
   font-size: 26rpx;
+}
+.order-title {
+  padding: 2px 6px;
+  border-bottom: 1px solid #e9eaec;
+}
+.order-title .my-text {
+  font-weight: bold;
+  font-size: 35rpx;
+}
+.order-title .detail-text {
+  font-size: 30rpx;
+}
+.order-item {
+  width: 15vw;
+  margin: 2px 6px;
+}
+.order-item text {
+  font-size: 24rpx;
 }

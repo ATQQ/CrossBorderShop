@@ -11,7 +11,12 @@
 			<view class='head-text fw-margin-left-mini'>
 				<view class='fw-w100'>
 					<text class='nickname'>昵称</text>
-					<i-icon class='fw-fr fw-margin-right-mini' type="setup" size="28" color="#ffd" />
+					<i-icon
+					 class='fw-fr fw-margin-right-mini'
+					 type="setup"
+					 size="28"
+					 color="#ffd"
+					/>
 				</view>
 				<view class='username'>
 					<text>accountusername</text>
@@ -27,12 +32,13 @@
 		</view>
 	</view>
 
-	<view class='fw-w100 fw-flex fw-c-c fw-warp'  style='background-color:#e9eaec;'>
+	<view class='fw-w100 fw-flex fw-c-c fw-warp' style='background-color:#e9eaec;'>
 		<!-- 会员-->
 		<view class='vip-area fw-flex card-area'>
 			<view class='left-area fw-flex fw-fdc'>
 				<text class='rank fw-text-c'>铂金会员</text>
-				<text class='score fw-text-c'>成长值 <text>999</text></text>
+				<text class='score fw-text-c'>成长值 <text>999</text>
+				</text>
 			</view>
 			<view class='right-area fw-flex fw-fdc'>
 				<text class='tips fw-text-c'>一段提示文本</text>
@@ -40,21 +46,32 @@
 			</view>
 		</view>
 		<!-- 我的订单-->
-		<view class=' fw-flex card-area'>
-			<view class='left-area fw-flex fw-fdc'>
-				<text class='rank fw-text-c'>铂金会员</text>
-				<text class='score fw-text-c'>成长值 <text>999</text></text>
+		<view class=' fw-flex card-area fw-warp'>
+			<view class='fw-w100 fw-flex fw-c-sb order-title'>
+				<text class='my-text'>我的订单</text>
+				<text class='detail-text fw-c-SubColor'>查看详情></text>
 			</view>
-			<view class='right-area fw-flex fw-fdc'>
-				<text class='tips fw-text-c'>一段提示文本</text>
-				<text class='goVip fw-text-c fw-c-primary'>进入会员中心</text>
+			<view class='fw-flex fw-c-c'>
+				<!-- 订单相关小功能-->
+				<block wx:for="{{orderFuns}}">
+					<view class='order-item fw-flex fw-flex fw-fdc'>
+						<i-icon
+						 class='fw-w100 fw-text-c'
+						 type="{{item.icon}}"
+						 size="28"
+						 color="#2d8cf0"
+						/>
+						<text class='fw-w100 fw-text-c'>{{item.text}}</text>
+					</view>
+				</block>
+
 			</view>
 		</view>
 
 	</view>
-	
+
 	<!-- 底部导航栏 -->
-	<i-tab-bar current="{{ bottomcurrent }}" bindchange="bottomPageChange" fixed="true">
+	<i-tab-bar current="{{ bottomcurrent }}" fixed="true" bindchange="bottomPageChange">
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
 			 key="homepage"

@@ -6,7 +6,25 @@ Page({
    * 页面的初始数据
    */
   data: {
+    orderFuns: [
+      {
+        icon: 'activity',
+        text: '待付款'
+      }, {
+        icon: 'transaction_fill',
+        text: '待发货'
+      }, {
+        icon: 'time_fill',
+        text: '待收货'
+      }, {
+        icon: 'message',
+        text: '评价'
+      }, {
+        icon: 'publishgoods_fill',
+        text: '购物车'
+      }
 
+    ]
   },
   /**
    * 生命周期函数--监听页面加载

@@ -122,7 +122,7 @@
 		</view>
 	</scroll-view>
 	<!-- 底部导航栏 -->
-	<i-tab-bar current="{{ bottomcurrent }}" bindchange="bottomPageChange" fixed="true">
+	<i-tab-bar current="{{ bottomcurrent }}"  fixed="true" bindchange="bottomPageChange">
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
 			 key="homepage"
