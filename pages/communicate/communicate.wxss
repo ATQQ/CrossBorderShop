@@ -163,6 +163,7 @@
   color: #495060;
   padding: 0 4px;
   font-size: 27rpx;
+  width: 80%;
 }
 #publish {
   width: 12vw;

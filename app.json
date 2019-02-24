@@ -5,7 +5,7 @@
     "pages/index/index",
     "pages/message/message",
     "pages/logs/logs"
-    ],
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -19,6 +19,7 @@
     "i-tabs": "source/plunge/iview/tabs/index",
     "i-tab": "source/plunge/iview/tab/index",
     "i-toast": "source/plunge/iview/toast/index",
-    "i-icon": "source/plunge/iview/icon/index"
+    "i-icon": "source/plunge/iview/icon/index",
+    "i-modal": "source/plunge/iview/modal/index"
   }
 }

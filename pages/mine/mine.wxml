@@ -71,7 +71,7 @@
 	</view>
 
 	<!-- 底部导航栏 -->
-	<i-tab-bar current="{{ bottomcurrent }}" fixed="true" bindchange="bottomPageChange">
+	<i-tab-bar current="{{ bottomcurrent }}" color='#2d8cf0' fixed="true" bindchange="bottomPageChange">
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
 			 key="homepage"

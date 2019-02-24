@@ -7,13 +7,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabscurrent_scroll: 'tab1'
+    tabscurrent_scroll: 'tab1',
+    visiblePub:false,
+    typeArr: ['求购', '其它', '选项1', '选项2'],
+    typeindex:0
   },
   tabsChangeScroll({ detail }) {
     this.setData({
       tabscurrent_scroll: detail.key
     })
     console.log(detail);
+  },
+  // 发布信息弹窗
+  publishnews:function (e) {
+    console.log(e);
+    this.setData({
+      visiblePub:true
+    })
+  },
+  cancelPub(){
+    this.setData({
+      visiblePub: false
+    })
+  },
+  surePub(){
+    this.setData({
+      visiblePub: false
+    })
+  },
+  // 类型改变
+  pubtypeChange(e){
+    console.log(e);
   },
   /**
    * 生命周期函数--监听页面加载
