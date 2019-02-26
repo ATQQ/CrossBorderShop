@@ -1,0 +1,33 @@
+<!--pages/pubContent/pubContent.wxml-->
+<view class='fw-bgc'>
+	<picker range="{{contentType}}" value="{{typeIndex}}" bindchange="typeChange">
+		<view style='padding:15px;' class='pubItem'>
+			<view class='fw-c-title fw-text-c pubTitle'>
+				分类
+			</view>
+			<view class='fw-c-primary fw-text-c pubType'>
+				{{contentType[typeIndex]}}
+			</view>
+		</view>
+	</picker>
+	<view>
+		<view style='padding:15px;' class='pubItem'>
+			<view class='fw-c-title fw-text-c pubTitle'>
+				内容
+			</view>
+			<view class='fw-c-primary pubType'>
+				<textarea bindinput='textChange' placeholder="此处编辑内容"/>
+			</view> 
+         </view>
+    </view>
+    <view  id='bin-group' class=' fw-flex fw-c-sb'>
+        <button  bindtap='cancelPub' size="default" type="default" plain="true"            hover-class="button-hover" >
+            取消发布
+        </button>
+        <button bindtap="surePub" size="default" type="primary" plain="true"            hover-class="button-hover" >
+            确认发布
+        </button>
+          
+    </view>
+</view>
+

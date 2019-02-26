@@ -34,6 +34,9 @@ Page({
     this.setData({
       visiblePub: false
     })
+    wx.navigateTo({
+      url: '../pubContent/pubContent'
+    })
   },
   // 类型改变
   pubtypeChange(e){

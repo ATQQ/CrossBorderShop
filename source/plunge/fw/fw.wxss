@@ -1,6 +1,9 @@
 /* color */
+.fw-border-primary{
+  border:1px solid #2d8cf0 !important;
+}
 .fw-b-primary{
-  background-color: #2d8cf0;
+  background-color: #2d8cf0 !important;
 }
 .fw-b-lightPrimary{
   background-color: #5cadff;
@@ -27,7 +30,7 @@
   background-color: #bbbec4;
 }
 .fw-c-primary{
-  color: #2d8cf0;
+  color: #2d8cf0 !important;
 }
 .fw-c-lightPrimary{
   color: #5cadff;
@@ -108,4 +111,10 @@
 }
 .fw-text-c{
   text-align: center;
+}
+.fw-w80{
+  width: 80%;
+}
+.fw-w20{
+  width: 20%;
 }

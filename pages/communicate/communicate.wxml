@@ -26,8 +26,8 @@
 							<text class='time'>2019-02-19,18:29</text>
 						</view>
 						<view class='fw-flex fw-c-sb'>
-						<text class='text-detail van-ellipsis'>这里是消息内容,超过类容会省略少时诵诗书所所所所所</text>
-						<text class='fw-c-Disabled' style='font-size:25rpx;'>详细></text>							
+							<text class='text-detail van-ellipsis'>这里是消息内容,超过类容会省略少时诵诗书所所所所所</text>
+							<text class='fw-c-Disabled' style='font-size:25rpx;'>详细></text>
 						</view>
 					</view>
 				</view>
@@ -38,26 +38,36 @@
 </scroll-view>
 
 <view>
-	<i-modal title="信息发布" visible="{{ visiblePub }}" bind:ok="surePub" bind:cancel="cancelPub" ok-text='发布'>
-	<view>
-		<picker class="" mode="selector" range="{{typeArr}}" range-key="" value="{{typeindex}}"
-			disabled="false" bindchange="pubtypeChange" bindcancel="">
-			<view>
-				分类:{{typeArr[typeindex]}}
-			</view>
-		</picker>
-	</view>
-	  
+	<i-modal
+	 title="信息发布"
+	 visible="{{ visiblePub }}"
+	 bind:ok="surePub"
+	 bind:cancel="cancelPub"
+	 ok-text='确定'
+	>
+		<view>
+			<text>确定发布新的内容吗?</text>
+		</view>
 	</i-modal>
 </view>
 <!--发布信息按钮-->
 <view id='publish' class='fw-flex fw-wrap fw-c-c' bindtap="publishnews">
-	<i-icon class='fw-w100 fw-text-c' type="praise_fill" size="22" color="#fff" />
+	<i-icon
+	 class='fw-w100 fw-text-c'
+	 type="praise_fill"
+	 size="22"
+	 color="#fff"
+	/>
 	<text class='fw-w100 fw-text-c' style='font-size:26rpx;'>发布</text>
 </view>
 <view>
 	<!-- 底部导航栏 -->
-	<i-tab-bar current="{{ bottomcurrent }}" color='#2d8cf0' bindchange="bottomPageChange" fixed="true">
+	<i-tab-bar
+	 current="{{ bottomcurrent }}"
+	 color='#2d8cf0'
+	 bindchange="bottomPageChange"
+	 fixed="true"
+	>
 		<block wx:if="{{power==1}}">
 			<i-tab-bar-item
 			 key="homepage"
