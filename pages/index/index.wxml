@@ -65,7 +65,7 @@
 						<i-notice-bar
 						 i-class='fw-bgc'
 						 loop
-						 speed='1600'
+						 speed='1000'
 						 color='#2d8cf0'
 						 background-color='#f8f8f9'
 						>{{notice_text}}
@@ -74,14 +74,14 @@
 				</view>
 				<!-- 推荐item -->
 				<view class='fw-flex fw-warp fw-w100 fw-c-c'>
-					<view class='recommend-item' wx:for='{{2}}'>
+					<view class='recommend-item' wx:for='{{recommendItems}}'>
 						<view class='fw-flex item-title fw-c-l'>
 							<i-icon type="praise_fill" size="22" color="#2d8cf0" />
-							<text>标题</text>
+							<text>{{item.title}}</text>
 						</view>
 						<view class='item-body fw-flex'>
-							<image src='../../source/image/food/p1.png' mode='scaleTofill' />
-							<image src='../../source/image/food/p1.png' mode='scaleTofill' />
+							<image src='{{item.src[0]}}' mode='scaleTofill' />
+							<image src='{{item.src[1]}}' mode='scaleTofill' />
 						</view>
 					</view>
 				</view>
@@ -90,18 +90,20 @@
 		<!-- 分类导航区域 -->
 		<view class='fw-margin-top-xs'>
 			<i-tabs current="{{ tabscurrent_scroll }}" scroll bindchange="tabsChangeScroll">
-				<i-tab key="tab1" title="全部" />
-				<i-tab key="tab10" title="选项1" />
-				<i-tab key="tab2" title="选项2" />
-				<i-tab key="tab3" title="选项3" />
-				<i-tab key="tab4" title="选项4" />
-				<i-tab key="tab5" title="选项5" />
-				<i-tab key="tab6" title="选项6" />
-				<i-tab key="tab7" title="选项7" />
-				<i-tab key="tab8" title="选项8" />
-				<i-tab key="tab9" title="选项9" />
+				<block wx:for="{{itabsData}}">
+					<i-tab key="{{item.key}}" title="{{item.title}}" />
+				</block>	
 			</i-tabs>
 			<view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
+				<view class='goods-item  fw-fdc' wx:for='{{goodsData}}'>
+					<image src='{{item.src}}' mode='scaleTofill' />
+					<text class='goods-title'>{{item.title}}</text>
+					<view class='goods-detail fw-c-l'>
+						<text class='goods-price'>{{item.price}}</text>
+						<text class='goods-sell'>{{item.sell}}</text>
+					</view>
+				</view>
+				<!--
 				<view class='goods-item  fw-fdc'>
 					<image src='../../source/image/testpic.png' mode='scaleTofill' />
 					<text class='goods-title'>一个头像</text>
@@ -110,14 +112,7 @@
 						<text class='goods-sell'>8888人购买</text>
 					</view>
 				</view>
-				<view class='goods-item  fw-fdc'>
-					<image src='../../source/image/testpic.png' mode='scaleTofill' />
-					<text class='goods-title'>一个头像</text>
-					<view class='goods-detail fw-c-l'>
-						<text class='goods-price'>998</text>
-						<text class='goods-sell'>8888人购买</text>
-					</view>
-				</view>
+				-->
 			</view>
 		</view>
 	</scroll-view>
@@ -140,14 +135,14 @@
 			 key="communicate"
 			 icon="interactive"
 			 current-icon="interactive_fill"
-			 count="1"
+			 
 			 title="交流"
 			/>
 			<i-tab-bar-item
 			 key="mine"
 			 icon="mine"
 			 current-icon="mine_fill"
-			 dot
+			 
 			 title="我的"
 			/>
 		</block>

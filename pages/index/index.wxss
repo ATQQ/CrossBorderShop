@@ -106,6 +106,8 @@ button {
 /* 底部分类商品栏 */
 .goods-item{
   width: 45vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .goods-item image{
   width: 45vw;
@@ -113,6 +115,7 @@ button {
 }
 .goods-title{
 font-size: 15px;
+white-space: nowrap;
 }
 .goods-price{
 color:#2d8cf0;

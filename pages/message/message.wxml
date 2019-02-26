@@ -2,22 +2,20 @@
 <view>
 	<scroll-view id='message-sv'>
 		<view class='fw-flex fw-c-c fw-warp'>
-			<block wx:for="{{20}}">
+			<block wx:for="{{messageData}}">
 				<view class='message-item'>
 					<view class='message-head'>
-						<image src="../../source/image/testpic.png" mode='scaleTofill' />
+						<image src="{{item.src}}" mode='scaleTofill' />
 					</view>
 					<view class='message-text'>
 						<view class='text-title'>
-							<text class='nickname'>昵称</text>
-							<text class='time'>2019-02-19,18:29</text>
+							<text class='nickname van-ellipsis'>{{item.nickname}}</text>
+							<text class='time'>{{item.time}}</text>
 						</view>
-						<text class='text-detail'>这里是消息内容
-					</text>
+						<text class='text-detail van-ellipsis'>{{item.text}}	</text>
 					</view>
 				</view>
 			</block>
-
 		</view>
 
 	</scroll-view>
