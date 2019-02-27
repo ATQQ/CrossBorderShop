@@ -1,0 +1,42 @@
+<!--pages/login/login.wxml-->
+<view class='fw-flex fw-fdc fw-c-c fw-bgc' style='padding:0 15px;'>
+	<!--logo名称区域-->
+	<view style='margin:88px 0 25px 0;' class='fw-flex fw-c-c'>
+		<text class='fw-text-c fw-c-primary' style='font-size:25px;'>海豹</text>
+	</view>
+	<!--输入框组-->
+	<view class='fw-flex fw-warp fw-c-c fw-w100'>
+		<view>
+			<van-field
+			 value="{{ username }}"
+			 required
+			 clearable
+			 label="用户名"
+			 placeholder="请输入用户名"
+             bind:input='inputName'
+			/>
+		</view>
+
+		<view>
+			<van-field
+			 value="{{ password }}"
+			 type="password"
+			 label="密码"
+			 placeholder="请输入密码"
+			 required
+             bind:input='inputPassword'
+			/>
+		</view>
+
+	</view>
+    <!--按钮组-->
+	<view>
+		<button class="btn-max btn-primary fw-margin-top-xs" plain="true" bindtap="login">
+			登录
+		</button>
+        <button class="btn-max  fw-margin-top-xs" type='primary' plain="true" bindtap="regist">
+			注册
+		</button>
+	</view>
+</view>
+

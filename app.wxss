@@ -10,3 +10,14 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.btn-max{
+  width: 80% !important;
+}
+.btn-min{
+  width: 40% !important;
+}
+.btn-primary{
+  color:#2d8cf0 !important;
+  border:1px solid  #2d8cf0 !important;
+}

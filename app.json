@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/communicate/communicate",
     "pages/message/message",
     "pages/index/index",
@@ -21,6 +22,7 @@
     "i-tab": "source/plunge/iview/tab/index",
     "i-toast": "source/plunge/iview/toast/index",
     "i-icon": "source/plunge/iview/icon/index",
-    "i-modal": "source/plunge/iview/modal/index"
+    "i-modal": "source/plunge/iview/modal/index",
+    "van-field": "source/plunge/vant/field/index"
   }
 }
