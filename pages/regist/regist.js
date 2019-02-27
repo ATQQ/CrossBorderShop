@@ -1,36 +1,21 @@
-// pages/login/login.js
+// pages/regist/regist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    username:'',
-    password:''
+    index:0,
+    roles:[
+      '消费者',
+      '经销商',
+      '厂商'
+    ]
   },
-  // 登录
-  login:function () {
-    console.log(this.data.username);
-    console.log(this.data.password);
-  },
-  // 注册
-  regist:function(){
-    wx.navigateTo({
-      url:'../regist/regist'
-    })
-  },
-  inputPassword:function(e){
-    this.setData({
-      password:e.detail
-    })
-    // console.log(e.detail);
-  },
-  inputName: function (e) {
-    this.setData({
-      username: e.detail
-    })
-    // console.log(e.detail);
-
+  roleChange:function(e){
+      this.setData({
+        index:e.detail.value
+      })
   },
   /**
    * 生命周期函数--监听页面加载
