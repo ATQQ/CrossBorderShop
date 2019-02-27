@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/regist/regist",
     "pages/login/login",
+    "pages/regist/regist",
     "pages/communicate/communicate",
     "pages/message/message",
     "pages/index/index",

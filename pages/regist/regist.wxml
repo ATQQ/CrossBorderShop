@@ -14,6 +14,14 @@
 		<block wx:if='{{index==0}}'>
 			<view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
 				<van-field
+				 value="{{ username}}"
+				 type="text"
+				 label="用户名"
+				 placeholder="请输入用户名"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
 				 value="{{ password1 }}"
 				 type="password"
 				 label="密码"
@@ -57,7 +65,7 @@
 				 label="地址"
 				 placeholder="请输入地址"
 				 border="{{ true }}"
-                 required
+				 required
 				/>
 				<van-field
 				 value="{{ idcard }}"
@@ -65,29 +73,243 @@
 				 label="身份证"
 				 placeholder="请输入身份证"
 				 border="{{ true }}"
-                 required
+				 required
 				/>
 			</view>
 		</block>
 		<!--经销商-->
 
 		<block wx:if='{{index==1}}'>
-			<view>
-				2
+			<view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
+				<van-field
+				 value="{{ username}}"
+				 type="text"
+				 label="用户名"
+				 placeholder="请输入用户名"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ password1 }}"
+				 type="password"
+				 label="密码"
+				 placeholder="请输入密码"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ password2 }}"
+				 type="password"
+				 label="确认密码"
+				 placeholder="请再次输入密码"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ email }}"
+				 type="text"
+				 label="邮箱"
+				 placeholder="请输入邮箱"
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ tel }}"
+				 type="text"
+				 label="手机"
+				 placeholder="请输入手机号"
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ origin }}"
+				 type="text"
+				 label="国籍"
+				 placeholder="请输入国籍"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ position }}"
+				 type="text"
+				 label="地址"
+				 placeholder="请输入地址"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="idcard"
+				 label="身份证"
+				 placeholder="请输入身份证"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="textarea"
+				 autosize
+				 label="生产范围"
+				 placeholder="营业执照载明的生产范围"
+				 border="{{ true }}"
+				 required
+				/>
 			</view>
 		</block>
 		<!--厂商-->
 
 		<block wx:if='{{index==2}}'>
-			<view>
-				3
+			<view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
+				<van-field
+				 value="{{ username}}"
+				 type="text"
+				 label="用户名"
+				 placeholder="请输入用户名"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ password1 }}"
+				 type="password"
+				 label="密码"
+				 placeholder="请输入密码"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ password2 }}"
+				 type="password"
+				 label="确认密码"
+				 placeholder="请再次输入密码"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ email }}"
+				 type="text"
+				 label="邮箱"
+				 placeholder="请输入邮箱"
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ tel }}"
+				 type="text"
+				 label="手机"
+				 placeholder="请输入手机号"
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ origin }}"
+				 type="text"
+				 label="国籍"
+				 placeholder="请输入国籍"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ position }}"
+				 type="text"
+				 label="地址"
+				 placeholder="请输入地址"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="idcard"
+				 label="身份证"
+				 placeholder="请输入身份证"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="textarea"
+				 autosize
+				 label="生产范围"
+				 placeholder="营业执照载明的生产范围"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="注册号"
+				 placeholder="企业工商注册号"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="传真"
+				 placeholder="请输入传真"
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="法定代表人"
+				 placeholder=""
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="法人手机"
+				 placeholder=""
+				 border="{{ true }}"
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="number"
+				 label="年收入"
+				 placeholder="请输入年收入"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="企业规模"
+				 placeholder="规模"
+				 border="{{ true }}"
+				 required
+				/>
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="注册资本"
+				 placeholder="注册资本"
+				 border="{{ true }}"
+				/>
+
+				<van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="成立时间"
+				 placeholder="请输入成立时间"
+				 border="{{ true }}"
+				/>
+                                                <van-field
+				 value="{{ idcard }}"
+				 type="text"
+				 label="行业分类"
+				 placeholder="请输入行业分类"
+				 border="{{ true }}"
+                 required
+				/>
 			</view>
 		</block>
-        <view>
-            <button class="btn-max fw-margin-top-xs" plain="true" type='primary' bindtap="login">
-			注册
-		</button>
-        </view>
+		<view>
+			<button
+			 class="btn-max fw-margin-top-xs"
+			 plain="true"
+			 type='primary'
+			 bindtap="login"
+			>
+				注册
+			</button>
+		</view>
 	</scroll-view>
 </view>
 
