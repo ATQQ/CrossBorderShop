@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    contentType:["服饰","电子产品","自行车","机械零件","其它"],
+    contentType:["交流","疑问","求购","海外","其它"],
     typeIndex:0,
     textArea:''
   },

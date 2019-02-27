@@ -57,6 +57,9 @@
 .fw-w100{
   width: 100%;
 }
+.fw-w45{
+  width:45%;
+}
 .fw-flex{
   display: flex;
 }

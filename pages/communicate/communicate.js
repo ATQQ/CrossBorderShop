@@ -7,10 +7,68 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabscurrent_scroll: 'tab1',
+    tabscurrent_scroll: 'all',
     visiblePub:false,
     typeArr: ['求购', '其它', '选项1', '选项2'],
-    typeindex:0
+    typeindex:0,
+    tabsTypeData:[
+      {
+        key:'all',
+        title:'全部'
+      },
+      {
+        key: 'tab2',
+        title: '交流'
+      },
+      {
+        key: 'tab3',
+        title: '疑问'
+      },
+      {
+        key: 'tab4',
+        title: '求购'
+      },
+      {
+        key: 'tab5',
+        title: '闲置'
+      },
+      {
+        key: 'tab6',
+        title: '海外'
+      }
+    ],
+    messageData:[
+      {
+        src:'../../source/image/headpic5.png',
+        nickname:'岁月的吻痕',
+        time:'2019-02-12,14:32:09',
+        text:'想买一个电脑显卡，性价比高一些的！'
+      },
+      {
+        src: '../../source/image/headpic6.png',
+        nickname: '北京达欣兴象商贸有限公司',
+        time: '2019-02-12,15:36:49',
+        text: '轻便型数码相机拥有高倍率变焦，其良好的性能为您提供了更加便捷的拍摄感受。北京市五棵松路40号摄影器材城典范店目前已上新尼康COOLPIX B600，有意向的请与我联系哦！'
+      },
+      {
+        src: '../../source/image/headpic7.png',
+        nickname: '威王电器',
+        time: '2019-02-13,11:32:26',
+        text: '威望电器在广州挂牌成立广东威王集团，正式宣布启动自有品牌战略，追赶珠三角小家电新一轮的品牌自建潮流。电饭煲贴牌加工有望突破瓶颈'
+      },
+      {
+        src:'../../source/image/headpic8.png',
+        nickname:'人生若如初見',
+        time:'2019-02-12,13:32:27',
+        text:'希望推荐一款性价比高的笔记本'
+      },
+      {
+        src: '../../source/image/headpic4.png',
+        nickname: '姿态动人',
+        time: '2019-01-12,22:35:45',
+        text: '怎么使用这个软件?'
+      },
+    ]
   },
   tabsChangeScroll({ detail }) {
     this.setData({

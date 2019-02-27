@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/communicate/communicate",
     "pages/message/message",
     "pages/index/index",
     "pages/pubContent/pubContent",
-    "pages/communicate/communicate",
     "pages/mine/mine",
     "pages/logs/logs"
   ],
