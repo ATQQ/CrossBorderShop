@@ -37,6 +37,9 @@
         <button class="btn-max  fw-margin-top-xs" type='primary' plain="true" bindtap="regist">
 			注册
 		</button>
+		<!-- <button class="btn-max  fw-margin-top-xs" type='primary'  bindtap="wxLogin">
+			微信一键登录
+		</button> -->
 	</view>
 </view>
 

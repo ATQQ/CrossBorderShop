@@ -33,6 +33,7 @@
 		</view>
 
 	</view>
+  
 	<scroll-view style='background-color:#f8f8f9; margin-bottom:51px;'>
 		<!-- 广告轮播图 -->
 		<view>

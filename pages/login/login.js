@@ -1,4 +1,22 @@
 // pages/login/login.js
+var app=getApp();
+var baseUrl=app.globalData.baseUrl;
+function loginwx(code, encryptedData, iv) {
+  wx.request({
+    url: baseUrl + 'test/wxLogin',
+    data: {
+      "code": code,
+      "iv": iv,
+      "encryptedData": encryptedData
+    },
+    success: function (res) {
+
+    },
+    fail: function () {
+      console.log('fail');
+    }
+  })
+}
 Page({
 
   /**
@@ -31,6 +49,29 @@ Page({
     })
     // console.log(e.detail);
 
+  },
+  wxLogin:function(e){
+    wx.login({
+      success:function(res){
+        // console.log(res.code);
+        if(res.code){
+          var code=res.code;
+          wx.getUserInfo({
+            success:function(res2){
+              console.log(res2);
+              var encryptedData=res2.encryptedData;
+              var iv=res2.iv;
+              loginwx(code,encryptedData,iv);
+            },
+            fail:function (res2) {
+                console.log("请求失败,没有授权")
+            }
+          })
+        }else{
+          console.log('获取用户登录态失败！' + res.errMsg);
+        }
+      },
+    })
   },
   /**
    * 生命周期函数--监听页面加载
