@@ -10,7 +10,7 @@
 			</view>
 			<view class='head-text fw-margin-left-mini'>
 				<view class='fw-w100'>
-					<text class='nickname'>时间覆盖一切</text>
+					<text class='nickname'>{{nickname}}</text>
 					<i-icon
 					 class='fw-fr fw-margin-right-mini'
 					 type="setup"
@@ -19,7 +19,7 @@
 					/>
 				</view>
 				<view class='username'>
-					<text>hb20984567</text>
+					<text>{{username}}</text>
 				</view>
 			</view>
 		</view>

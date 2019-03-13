@@ -1,0 +1,3 @@
+/* pages/goods/goods.wxss */
+
+@import "../index/index.wxss";

@@ -117,9 +117,10 @@
 			</view>
 		</view>
 	</scroll-view>
+
 	<!-- 底部导航栏 -->
 	<i-tab-bar current="{{ bottomcurrent }}"  color='#2d8cf0'fixed="true" bindchange="bottomPageChange">
-		<block wx:if="{{power==1}}">
+		<block wx:if="{{power==0}}">
 			<i-tab-bar-item
 			 key="homepage"
 			 icon="homepage"
@@ -144,6 +145,38 @@
 			 icon="mine"
 			 current-icon="mine_fill"
 			 
+			 title="我的"
+			/>
+		</block>
+		<block wx:elif="{{power==1}}">
+			<i-tab-bar-item
+			 key="homepage"
+			 icon="homepage"
+			 current-icon="homepage_fill"
+			 title="首页"
+			/>
+			<i-tab-bar-item
+			 key="message"
+			 icon="message"
+			 current-icon="message_fill"
+			 title="消息"
+			/>
+			<i-tab-bar-item
+			 key="newgoods"
+			 icon="emoji"
+			 current-icon="interactive_fill"
+			 title="上新"
+			/>
+			<i-tab-bar-item
+			 key="communicate"
+			 icon="interactive"
+			 current-icon="interactive_fill"
+			 title="交流"
+			/>
+			<i-tab-bar-item
+			 key="mine"
+			 icon="mine"
+			 current-icon="mine_fill"
 			 title="我的"
 			/>
 		</block>

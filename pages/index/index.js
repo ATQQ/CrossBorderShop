@@ -188,6 +188,11 @@ Page({
         wx.redirectTo({
           url: '../mine/mine'
         })
+
+      case 'newgoods':
+        wx.redirectTo({
+          url: '../newgoods/newgoods'
+        })
         break;
       default:
         break;

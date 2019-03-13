@@ -1,11 +1,15 @@
 // pages/mine/mine.js
-const app = getApp()
+const app = getApp();
+var baseUrl = app.globalData.baseUrl;
+var requestHeader=app.globalData.header;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    nickname:null,
+    username:null,
     orderFuns: [
       {
         icon: 'activity',
@@ -23,9 +27,9 @@ Page({
         icon: 'publishgoods_fill',
         text: '购物车'
       }
-
     ]
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,6 +37,22 @@ Page({
     this.setData({
       bottomcurrent: app.globalData.current,
       power: app.globalData.power
+    })
+    var that=this;
+    wx.request({
+      url: baseUrl + 'user/user',
+      method:"GET",
+      header:requestHeader,
+      success: function (res) {
+        let data=res.data;
+        that.setData({
+          username:data.username,
+          nickname:data.nickname
+        })
+      },
+      fail: function () {
+        console.log('fail');
+      }
     })
   },
 

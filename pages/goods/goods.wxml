@@ -1,0 +1,24 @@
+<!--pages/goods/goods.wxml-->
+
+<!-- 分类导航区域 -->
+	<scroll-view style='background-color:#f8f8f9; margin-bottom:51px;'>
+		<!-- 分类导航区域 -->
+		<view class='fw-margin-top-xs'>
+			<i-tabs current="{{ tabscurrent_scroll }}" scroll bindchange="tabsChangeScroll">
+				<block wx:for="{{itabsData}}">
+					<i-tab key="{{item.key}}" title="{{item.title}}" />
+				</block>	
+			</i-tabs>
+			<view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
+				<view class='goods-item  fw-fdc' wx:for='{{goodsData}}'>
+					<image src='{{item.src}}' mode='scaleTofill' />
+					<text class='goods-title'>{{item.title}}</text>
+					<view class='goods-detail fw-c-l'>
+						<text class='goods-price'>{{item.price}}</text>
+						<text class='goods-sell'>{{item.sell}}</text>
+					</view>
+				</view>
+                
+			</view>
+		</view>
+	</scroll-view>

@@ -37,6 +37,9 @@ App({
     userInfo: null,
     current:'homepage',
     power:1,
-    baseUrl:'http://localhost:8080/CrossBorderBackstage/'
+    baseUrl:'http://localhost:8080/CrossBorderBackstage/',
+    header:{
+      'Cookie': ''
+    }
   }
 })

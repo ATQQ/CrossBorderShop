@@ -1,8 +1,10 @@
 {
   "pages": [
+    "pages/newgoods/newgoods",
+    "pages/index/index",
+    "pages/goods/goods",
     "pages/login/login",
     "pages/message/message",
-    "pages/index/index",
     "pages/regist/regist",
     "pages/communicate/communicate",
     "pages/pubContent/pubContent",
@@ -24,6 +26,8 @@
     "i-toast": "source/plunge/iview/toast/index",
     "i-icon": "source/plunge/iview/icon/index",
     "i-modal": "source/plunge/iview/modal/index",
-    "van-field": "source/plunge/vant/field/index"
+    "van-field": "source/plunge/vant/field/index",
+    "van-popup": "source/plunge/vant/popup/index",
+    "i-button": "source/plunge/iview/button/index"
   }
 }

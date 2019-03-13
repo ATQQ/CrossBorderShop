@@ -22,7 +22,6 @@ Page({
     email: null,
     origin:null,
     tel:null
-
   },
 
   roleChange: function (e) {
