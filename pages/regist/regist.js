@@ -1,21 +1,126 @@
+
 // pages/regist/regist.js
+var app = getApp();
+var baseUrl = app.globalData.baseUrl;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    index:0,
-    roles:[
+    index: 0,
+    roles: [
       '消费者',
       '经销商',
       '厂商'
-    ]
+    ],
+    nickname: null,
+    username: null,
+    password1: null,
+    password2: null,
+    email: null,
+    origin:null,
+    tel:null
+
   },
-  roleChange:function(e){
-      this.setData({
-        index:e.detail.value
-      })
+
+  roleChange: function (e) {
+    this.setData({
+      index: Number(e.detail.value)
+    })
+  },
+  regist: function () {
+    var data=this.data;
+    var jsondata=null;
+    jsondata = {
+      'nickname': data.nickname,
+      'password': data.password1,
+      'username': data.username,
+      'power': data.index
+    };
+    switch (data.index) {
+      case 0:
+        jsondata.info =JSON.stringify({
+            'email': data.email
+          })
+        break;
+      case 1:
+        jsondata.info = JSON.stringify({
+          'email': data.email,
+          'origin':data.origin,
+          'tel':data.tel
+        })
+        break;
+      case 2:
+        jsondata.info =JSON.stringify({
+            'email': data.email
+          })
+        break;
+    
+      default:
+        break;
+    }
+    
+    console.log(JSON.stringify(jsondata));
+    wx.request({
+      url: baseUrl+'user/user',
+      method:"PUT",
+      data:JSON.stringify(jsondata),
+      success:function(res){
+          console.log(res.data);
+      },
+      fail:function(){
+        wx.showLoading({
+          title: '请检查网络',
+          icon:"none"
+        })
+      }
+    })
+  },
+  // 输入框获取值
+  inputValue: function (res) {
+    var key = res.currentTarget.dataset.key;
+    var that = this;
+    switch (key) {
+      case 'username':
+        that.setData({
+          username: res.detail
+        })
+        break;
+      case 'password1':
+        that.setData({
+          password1: res.detail
+        })
+        break;
+      case 'password2':
+        that.setData({
+          password2: res.detail
+        })
+        break;
+      case 'nickname':
+        that.setData({
+          nickname: res.detail
+        })
+        break;
+      case 'email':
+        that.setData({
+          email: res.detail
+        })
+        break;
+      case 'tel':
+        that.setData({
+          tel: res.detail
+        })
+        break;
+      case 'origin':
+        that.setData({
+          origin: res.detail
+        })
+        break;
+      default:
+        break;
+    }
   },
   /**
    * 生命周期函数--监听页面加载

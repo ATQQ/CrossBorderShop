@@ -37,6 +37,6 @@ App({
     userInfo: null,
     current:'homepage',
     power:1,
-    baseUrl:'http://localhost:8080/WebTest/'
+    baseUrl:'http://localhost:8080/CrossBorderBackstage/'
   }
 })

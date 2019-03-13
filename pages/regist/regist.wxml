@@ -14,6 +14,8 @@
 		<block wx:if='{{index==0}}'>
 			<view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
 				<van-field
+				data-key='username'
+				bind:input="inputValue"
 				 value="{{ username}}"
 				 type="text"
 				 label="用户名"
@@ -22,6 +24,8 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='password1'
+				bind:input="inputValue"
 				 value="{{ password1 }}"
 				 type="password"
 				 label="密码"
@@ -30,6 +34,8 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='password2'
+				bind:input="inputValue"
 				 value="{{ password2 }}"
 				 type="password"
 				 label="确认密码"
@@ -38,7 +44,19 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='nickname'
+				bind:input="inputValue"
+				 value="{{ nickname }}"
+				 type="text"
+				 label="昵称"
+				 placeholder="请输入昵称"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				data-key='email'
 				 value="{{ email }}"
+				 bind:input="inputValue"
 				 type="text"
 				 label="邮箱"
 				 placeholder="请输入邮箱"
@@ -82,6 +100,8 @@
 		<block wx:if='{{index==1}}'>
 			<view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
 				<van-field
+				data-key='username'
+				bind:input="inputValue"
 				 value="{{ username}}"
 				 type="text"
 				 label="用户名"
@@ -90,6 +110,8 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='password1'
+				bind:input="inputValue"
 				 value="{{ password1 }}"
 				 type="password"
 				 label="密码"
@@ -98,6 +120,8 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='password2'
+				bind:input="inputValue"
 				 value="{{ password2 }}"
 				 type="password"
 				 label="确认密码"
@@ -106,6 +130,18 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='nickname'
+				bind:input="inputValue"
+				 value="{{ nickname }}"
+				 type="text"
+				 label="昵称"
+				 placeholder="请输入昵称"
+				 required
+				 border="{{ true }}"
+				/>
+				<van-field
+				data-key='email'
+				bind:input="inputValue"
 				 value="{{ email }}"
 				 type="text"
 				 label="邮箱"
@@ -113,6 +149,8 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='tel'
+				bind:input="inputValue"
 				 value="{{ tel }}"
 				 type="text"
 				 label="手机"
@@ -120,6 +158,8 @@
 				 border="{{ true }}"
 				/>
 				<van-field
+				data-key='origin'
+				bind:input="inputValue"
 				 value="{{ origin }}"
 				 type="text"
 				 label="国籍"
@@ -305,7 +345,7 @@
 			 class="btn-max fw-margin-top-xs"
 			 plain="true"
 			 type='primary'
-			 bindtap="login"
+			 bindtap="regist"
 			>
 				注册
 			</button>

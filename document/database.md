@@ -8,6 +8,7 @@
 | username |    用户名    | varchar(12)  |    NN    |   账号    |     aqwerad123     |
 | password |     密码     | varchar(18)  |    NN    |   密码    |      a123456       |
 | nickname |     昵称     | varchar(20)  |    NN    |   昵称    |       小明2        |
-|  power   |     权限     |  varchar(2)  |    NN    | 角色权限  | 消费者.经销商,厂商 |
+|  power   |     权限     |     int      |    NN    | 角色权限  | 消费者.经销商,厂商 |
 |   info   | 个人附加信息 | varchar(256) |    NN    | 附加信息  |   身份证,国籍等    |
-|  status  |     状态     |  varchar(2)  |    NN    |账号状态|1/0|
+|  status  |     状态     |     int      |    NN    | 账号状态  |        1/0         |
+

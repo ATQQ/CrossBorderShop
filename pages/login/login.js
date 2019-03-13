@@ -30,6 +30,42 @@ Page({
   login:function () {
     console.log(this.data.username);
     console.log(this.data.password);
+    wx.request({
+      url:baseUrl+'user/login',
+      header: {
+        'content-type': 'application/json;charset=utf-8' // 默认值
+      },
+      method:'POST',
+      data: JSON.stringify({
+        "username": this.data.username,
+        "password": this.data.password
+      }),
+      success:function (res) {
+        var data=res.data;
+        console.log(data);
+        
+        switch (data.state) {
+          case '1':
+            break;
+          case '0':
+            wx.showToast({
+              title: '账号或密码错误',
+              icon: 'none',
+              duration: 1500        //  2秒后自动关闭
+            })
+            break;
+          default:
+            break;
+        }
+      },
+      fail:function (res) {
+        wx.showToast({
+          title: '登录失败,检查网络',
+          icon: 'none',
+          duration: 2000        //  2秒后自动关闭
+        })
+      }
+    })
   },
   // 注册
   regist:function(){
