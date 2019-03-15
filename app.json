@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/communicate/communicate",
-    "pages/newgoods/newgoods",
-    "pages/index/index",
-    "pages/goods/goods",
     "pages/login/login",
+    "pages/index/index",
+    "pages/newgoods/newgoods",
+    "pages/communicate/communicate",
+    "pages/goods/goods",
     "pages/message/message",
     "pages/regist/regist",
     "pages/pubContent/pubContent",

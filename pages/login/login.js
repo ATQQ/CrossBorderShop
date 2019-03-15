@@ -46,18 +46,22 @@ Page({
         var that=this;
         switch (data.state) {
           case '1':
+
+            wx.setStorageSync('token', data.token)
+            
+            app.globalData.header.Cookie = 'JSESSIONID=' + data.token;
+            app.globalData.power=data.power;
             switch (Number(data.power)) {
               case 0: //消费者
-                wx.setStorage({
-                  key: 'token',
-                  data: data.token
-                })
-                app.globalData.header.Cookie = 'JSESSIONID=' + data.token;
                 wx.redirectTo({
                   url: '../index/index',
                 })
                 break;
-            
+              case 1:
+                wx.redirectTo({
+                  url: '../index/index',
+                })
+                break;
               default:
                 break;
             }

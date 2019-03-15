@@ -175,15 +175,15 @@
 				 border="{{ true }}"
 				 required
 				/>
-				<van-field
+				<!-- <van-field
 				 value="{{ idcard }}"
 				 type="idcard"
 				 label="身份证"
 				 placeholder="请输入身份证"
 				 border="{{ true }}"
 				 required
-				/>
-				<van-field
+				/> -->
+				<!-- <van-field
 				 value="{{ idcard }}"
 				 type="textarea"
 				 autosize
@@ -191,7 +191,7 @@
 				 placeholder="营业执照载明的生产范围"
 				 border="{{ true }}"
 				 required
-				/>
+				/> -->
 			</view>
 		</block>
 		<!--厂商-->

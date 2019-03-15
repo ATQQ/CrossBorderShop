@@ -1,110 +1,94 @@
 <!--index.wxml-->
 <view class=''>
-	<!-- 顶部搜索栏 -->
-	<view class="searchbar">
-		<!-- scan-icon -->
-		<view class="left-icon" bindtap='clickScan'>
-			<i-icon type="scan" size="22" color="#80848f" />
-		</view>
-		<view class='right-search'>
-			<view class="weui-search-bar">
-				<view class="weui-search-bar__form">
-					<view class="weui-search-bar__box">
-						<icon class="weui-icon-search_in-box" type="search" size="14" />
-						<input
-						 type="text"
-						 class="weui-search-bar__input"
-						 placeholder="搜索"
-						 value="{{inputVal}}"
-						 focus="{{inputShowed}}"
-						 bindinput="inputTyping"
-						/>
-						<view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-							<icon type="clear" size="14" />
-						</view>
-					</view>
-					<label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-						<icon class="weui-icon-search" type="search" size="14" />
-						<view class="weui-search-bar__text">搜索</view>
-					</label>
-				</view>
-				<view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="sureInput">确定</view>
-			</view>
-		</view>
+  <!-- 顶部搜索栏 -->
+  <view class="searchbar">
+    <!-- scan-icon -->
+    <view class="left-icon" bindtap='clickScan'>
+      <i-icon type="scan" size="22" color="#80848f" />
+    </view>
+    <view class='right-search'>
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14" />
+            <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+              <icon type="clear" size="14" />
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+            <icon class="weui-icon-search" type="search" size="14" />
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="sureInput">确定</view>
+      </view>
+    </view>
 
-	</view>
-  
-	<scroll-view style='background-color:#f8f8f9; margin-bottom:51px;'>
-		<!-- 广告轮播图 -->
-		<view>
-			<swiper indicator-dots='true' autoplay='true' interval='3000'>
-				<block wx:for="{{swiperItems}}" wx:key="src">
-					<swiper-item>
-						<image src='{{item.src}}' mode='scaleTofill' />
-					</swiper-item>
-				</block>
-			</swiper>
-		</view>
-		<!-- 小功能 -->
-		<view class='fw-c-c fw-flex'>
-			<view class='fun-item' data-key='123' bindtap='test'>
-				<image src='../../source/image/find.png' mode='scaleTofill' />
-				<text>码头</text>
-			</view>
-			<view class='fun-item' data-key='123' bindtap='test'>
-				<image src='../../source/image/shop.png' mode='scaleTofill' />
-				<text>分类</text>
-			</view>
-		</view>
-		<!-- 推荐 -->
-		<view class='fw-flex fw-c-c fw-warp fw-bgc'>
-			<view class='recommend'>
-				<!-- 标题栏 -->
-				<view class='recommend-title'>
-					<i-icon type="like_fill" size="22" color="#80848f" />
-					<view class='notice-text'>
-						<i-notice-bar
-						 i-class='fw-bgc'
-						 loop
-						 speed='1000'
-						 color='#2d8cf0'
-						 background-color='#f8f8f9'
-						>{{notice_text}}
-						</i-notice-bar>
-					</view>
-				</view>
-				<!-- 推荐item -->
-				<view class='fw-flex fw-warp fw-w100 fw-c-c'>
-					<view class='recommend-item' wx:for='{{recommendItems}}'>
-						<view class='fw-flex item-title fw-c-l'>
-							<i-icon type="praise_fill" size="22" color="#2d8cf0" />
-							<text>{{item.title}}</text>
-						</view>
-						<view class='item-body fw-flex'>
-							<image src='{{item.src[0]}}' mode='scaleTofill' />
-							<image src='{{item.src[1]}}' mode='scaleTofill' />
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<!-- 分类导航区域 -->
-		<view class='fw-margin-top-xs'>
-			<i-tabs current="{{ tabscurrent_scroll }}" scroll bindchange="tabsChangeScroll">
-				<block wx:for="{{itabsData}}">
-					<i-tab key="{{item.key}}" title="{{item.title}}" />
-				</block>	
-			</i-tabs>
-			<view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
-				<view class='goods-item  fw-fdc' wx:for='{{goodsData}}'>
-					<image src='{{item.src}}' mode='scaleTofill' />
-					<text class='goods-title'>{{item.title}}</text>
-					<view class='goods-detail fw-c-l'>
-						<text class='goods-price'>{{item.price}}</text>
-						<text class='goods-sell'>{{item.sell}}</text>
-					</view>
-				</view>
-				<!--
+  </view>
+
+  <scroll-view style='background-color:#f8f8f9; margin-bottom:51px;'>
+    <!-- 广告轮播图 -->
+    <view>
+      <swiper indicator-dots='true' autoplay='true' interval='3000'>
+        <block wx:for="{{swiperItems}}" wx:key="src">
+          <swiper-item>
+            <image src='{{item.src}}' mode='scaleTofill' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 小功能 -->
+    <view class='fw-c-c fw-flex'>
+      <view class='fun-item' data-key='123' bindtap='test' wx:for="{{smallfuns}}">
+        <image src='{{item.src}}' mode='scaleTofill' />
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+    <!-- 推荐 -->
+    <view class='fw-flex fw-c-c fw-warp fw-bgc'>
+      <view class='recommend'>
+        <!-- 标题栏 -->
+        <view class='recommend-title'>
+          <i-icon type="like_fill" size="22" color="#80848f" />
+          <view class='notice-text'>
+            <i-notice-bar i-class='fw-bgc' loop speed='1000' color='#2d8cf0' background-color='#f8f8f9'>{{notice_text}}
+            </i-notice-bar>
+          </view>
+        </view>
+        <!-- 推荐item -->
+        <view class='fw-flex fw-warp fw-w100 fw-c-c'>
+          <view class='recommend-item' wx:for='{{recommendItems}}'>
+            <view class='fw-flex item-title fw-c-l'>
+              <i-icon type="praise_fill" size="22" color="#2d8cf0" />
+              <text>{{item.title}}</text>
+            </view>
+            <view class='item-body fw-flex'>
+              <image src='{{item.src[0]}}' mode='scaleTofill' />
+              <image src='{{item.src[1]}}' mode='scaleTofill' />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 分类导航区域 -->
+    <view class='fw-margin-top-xs'>
+      <i-tabs current="{{ tabscurrent_scroll }}" scroll bindchange="tabsChangeScroll">
+        <block wx:for="{{itabsData}}">
+          <i-tab key="{{item.key}}" title="{{item.title}}" />
+        </block>
+      </i-tabs>
+      <view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
+        <view class='goods-item  fw-fdc' wx:for='{{goodsData}}' data-id='{{item.id}}'>
+          <image src='{{item.images[0]}}' mode='scaleTofill' />
+          <text class='goods-title'>{{item.name+item.version}}</text>
+          <view class='goods-detail fw-c-l'>
+            <text class='goods-price'>{{item.price}}</text>
+            <text class='goods-sell'>{{item.sold}}</text>
+          </view>
+
+        </view>
+        <!--
 				<view class='goods-item  fw-fdc'>
 					<image src='../../source/image/testpic.png' mode='scaleTofill' />
 					<text class='goods-title'>一个头像</text>
@@ -114,74 +98,26 @@
 					</view>
 				</view>
 				-->
-			</view>
-		</view>
-	</scroll-view>
+      </view>
+    </view>
+  </scroll-view>
 
-	<!-- 底部导航栏 -->
-	<i-tab-bar current="{{ bottomcurrent }}"  color='#2d8cf0'fixed="true" bindchange="bottomPageChange">
-		<block wx:if="{{power==0}}">
-			<i-tab-bar-item
-			 key="homepage"
-			 icon="homepage"
-			 current-icon="homepage_fill"
-			 title="首页"
-			/>
-			<i-tab-bar-item
-			 key="message"
-			 icon="message"
-			 current-icon="message_fill"
-			 title="消息"
-			/>
-			<i-tab-bar-item
-			 key="communicate"
-			 icon="interactive"
-			 current-icon="interactive_fill"
-			 
-			 title="交流"
-			/>
-			<i-tab-bar-item
-			 key="mine"
-			 icon="mine"
-			 current-icon="mine_fill"
-			 
-			 title="我的"
-			/>
-		</block>
-		<block wx:elif="{{power==1}}">
-			<i-tab-bar-item
-			 key="homepage"
-			 icon="homepage"
-			 current-icon="homepage_fill"
-			 title="首页"
-			/>
-			<i-tab-bar-item
-			 key="message"
-			 icon="message"
-			 current-icon="message_fill"
-			 title="消息"
-			/>
-			<i-tab-bar-item
-			 key="newgoods"
-			 icon="emoji"
-			 current-icon="interactive_fill"
-			 title="上新"
-			/>
-			<i-tab-bar-item
-			 key="communicate"
-			 icon="interactive"
-			 current-icon="interactive_fill"
-			 title="交流"
-			/>
-			<i-tab-bar-item
-			 key="mine"
-			 icon="mine"
-			 current-icon="mine_fill"
-			 title="我的"
-			/>
-		</block>
-	</i-tab-bar>
-	<!-- 轻提示 -->	
-	<i-toast id="toast" />
+  <!-- 底部导航栏 -->
+  <i-tab-bar current="{{ bottomcurrent }}" color='#2d8cf0' fixed="true" bindchange="bottomPageChange">
+    <block wx:if="{{power==0}}">
+      <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页" />
+      <i-tab-bar-item key="message" icon="message" current-icon="message_fill" title="消息" />
+      <i-tab-bar-item key="communicate" icon="interactive" current-icon="interactive_fill" title="交流" />
+      <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的" />
+    </block>
+    <block wx:elif="{{power==1}}">
+      <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页" />
+      <i-tab-bar-item key="message" icon="message" current-icon="message_fill" title="消息" />
+      <i-tab-bar-item key="newgoods" icon="emoji" current-icon="interactive_fill" title="上新" />
+      <i-tab-bar-item key="communicate" icon="interactive" current-icon="interactive_fill" title="交流" />
+      <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="我的" />
+    </block>
+  </i-tab-bar>
+  <!-- 轻提示 -->
+  <i-toast id="toast" />
 </view>
-

@@ -67,7 +67,25 @@ Page({
       method:"PUT",
       data:JSON.stringify(jsondata),
       success:function(res){
-          console.log(res.data);
+        var data=res.data;
+        if (data.state==1||data.state=="1") {
+          wx.showToast({
+            title: '注册成功',
+            icon: 'succcess',
+            duration: 1500        //  2秒后自动关闭
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1000);
+        }else{
+          wx.showToast({
+            title: '用户名重复',
+            icon: 'none',
+            duration: 1000        //  2秒后自动关闭
+          })
+        }
       },
       fail:function(){
         wx.showLoading({

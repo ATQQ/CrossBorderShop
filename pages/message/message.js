@@ -9,25 +9,25 @@ Page({
   data: {
     messageData: [
       {
-        src: '../../source/image/headpic2.png',
+        src: '../../../../source/image/headpic2.png',
         nickname: '十堰经济开发区庭艳汽配经营部',
         time: '2019-02-26,18:35:44',
         text: '我们家的发动机悬置装置生产技术是十分有保障的，完全达得到您刚才所描述的参数以及性能。但具体数据希望您能发一个详细文件。'
       },
       {
-        src: '../../source/image/headpic1.png',
+        src: '../../../../source/image/headpic1.png',
         nickname: '沃诺康明斯配件专营店',
         time: '2019-02-25,17:23:12',
         text: '我家发动机缸体5302096适用于东风康明斯IS6D机型。但如果是与此机型相似类别的机型，我公司也可以进行加工制造。'
       },
       {
-        src: '../../source/image/headpic3.png',
+        src: '../../../../source/image/headpic3.png',
         nickname: '济南塔森进出口有限公司',
         time: '2019-02-26,14:56:10',
         text: '曼MC07发动机、曼MC05发动机、曼MC11发动机、曼MT07发动机 SCR后处理系统等我们都在做。报价区间随所购数量的每30件下降0.05个点。'
       },
       {
-        src: '../../source/image/headpic4.png',
+        src: '../../../../source/image/headpic4.png',
         nickname: '华为亚太市场部',
         time: '2019-01-26,15:56:10',
         text: '亚太地区目前的装配车间设备的需求在增加，如若有此类设备制造商可与我私聊。'

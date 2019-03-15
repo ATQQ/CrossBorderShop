@@ -2,8 +2,21 @@
 //获取应用实例
 const app = getApp()
 const { $Toast } = require('../../source/plunge/iview/base/index');
+var baseUrl = app.globalData.baseUrl;
+var requestHeader = app.globalData.header;
+
 Page({
   data: {
+    smallfuns:[
+      {
+        src: baseUrl + 'upload/images/find.png',
+        title:'码头'
+      },
+      {
+        src: baseUrl + 'upload/images/shop.png',
+        title:'分类'
+      }
+    ],
     bottomcurrent: '',
     inputShowed: false,
     inputVal: "",
@@ -42,27 +55,27 @@ Page({
       {
         title: 'FBK调货',
         src: [
-          '../../source/image/goods4.png',
-          '../../source/image/goods5.png'
+          baseUrl +'upload/images/goods4.png',
+          baseUrl +'upload/images/goods5.png'
         ]
       },
       {
         title: '分蛋糕',
         src: [
-          '../../source/image/goods6.png',
-          '../../source/image/goods7.png'
+          baseUrl +'upload/images/goods6.png',
+          baseUrl +'upload/images/goods7.png'
         ]
       }
     ],
     swiperItems: [
       {
-        src: '../../source/image/swiper/test1.png'
+        src: baseUrl +'upload/images/swiper/test1.png'
       },
       {
-        src: '../../source/image/swiper/test2.png'
+        src: baseUrl +'upload/images/swiper/test2.png'
       },
       {
-        src: '../../source/image/swiper/test3.png'
+        src: baseUrl +'upload/images/swiper/test3.png'
       }
     ],
     notice_text: "聚龙金融设备股份有限公司与俄罗斯银行达成合作协议，出口点钞机1万台。",
@@ -71,19 +84,19 @@ Page({
     tabscurrent_scroll: 'tab1',
     goodsData:[
       {
-        src:'../../source/image/goods1.png',
+        src:baseUrl +'upload/images/goods1.png',
         title:'康艺JBYD-HT 点钞机',
         price:1380,
         sell:123
       },
       {
-        src: '../../source/image/goods2.png',
+        src: baseUrl +'upload/images/goods2.png',
         title: '智利进口红酒',
         price: 99,
         sell: 532
       }
       ,{
-        src:'../../source/image/goods3.png',
+        src:baseUrl +'upload/images/goods3.png',
         title:'爱他美（Aptamil） 澳新爱他美金装版 幼儿配方奶粉 3段（12-36个月） 900g',
         price: 150,
         sell: 139
@@ -117,14 +130,57 @@ Page({
       inputShowed: true
     });
   },
+  // 确认搜索
   sureInput: function () {
     var val = this.data.inputVal;
     console.log('确定' + val);
+    var that=this;
+    var mode = 'home';
+    if(val==''||val==null){
+      mode = 'home';
+    }else{
+      mode = 'search';
+    }
+    wx.request({
+      url: baseUrl + 'goods/goods',
+      method: "GET",
+      header: requestHeader,
+      data: {
+        "mode": mode,
+        "content": val
+      },
+      success: function (res) {
+        console.log(res.data);
+        var data = res.data;
+
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].images != '[]' || data[i].images.length > 10)
+            data[i].images = JSON.parse(data[i].images);
+          for (let j = 0; j < data[i].images.length; j++) {
+            data[i].images[j] = baseUrl + data[i].images[j];
+          }
+        }
+
+        that.setData({
+          goodsData: data
+        })
+      },
+      fail: function () {
+        wx.showToast({
+          title: '网络异常',
+          icon: "none",
+          duration: 2000
+        })
+      }
+    })
+
     this.setData({
       inputVal: "",
       inputShowed: false
     });
+
   },
+
   clearInput: function () {
     this.setData({
       inputVal: ""
@@ -147,6 +203,39 @@ Page({
       content: '加载中',
       type: 'loading'
     });
+
+    wx.request({
+      url: baseUrl + 'goods/goods',
+      method: "GET",
+      header: requestHeader,
+      data:{
+        "mode":"home",
+        "content":"none",
+      },
+      success: function (res) {
+        console.log(res.data);
+        var data = res.data;
+
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].images != '[]' || data[i].images.length > 10)
+            data[i].images = JSON.parse(data[i].images);
+          for (let j = 0; j < data[i].images.length; j++) {
+            data[i].images[j] = baseUrl + data[i].images[j];
+          }
+        }
+
+        that.setData({
+          goodsData: data
+        })
+      },
+      fail: function () {
+        wx.showToast({
+          title: '网络异常',
+          icon: "none",
+          duration: 2000
+        })
+      }
+    })
   },
   /**
   * 生命周期函数--监听页面初次渲染完成
@@ -190,9 +279,9 @@ Page({
         })
 
       case 'newgoods':
-        wx.redirectTo({
-          url: '../newgoods/newgoods'
-        })
+          wx.navigateTo({
+            url: '../newgoods/newgoods',
+          })
         break;
       default:
         break;

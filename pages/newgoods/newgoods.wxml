@@ -2,121 +2,64 @@
 <!-- 分类导航区域 -->
 <view>
 
-	<view id='publish' class='fw-flex fw-wrap fw-c-c' bindtap="publishnews">
-		<i-icon
-		 class='fw-w100 fw-text-c'
-		 type="praise_fill"
-		 size="22"
-		 color="#fff"
-		/>
-		<text class='fw-w100 fw-text-c' style='font-size:26rpx;'>上新</text>
-	</view>
-	<van-popup
-	 show="{{ showPopup }}"
-	 position="right"
-	 close-on-click-overlay
-	 overlay
-	 bind:click-overlay='closePopup'
-	>
-		<view id='Popup'>
-
-			<view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
-				<van-field
-				 data-key='goodsname'
-				 bind:input="inputValue"
-				 value="{{ goodsname}}"
-				 type="text"
-				 label="名称"
-				 placeholder="请输入产品名称"
-				 required
-				 border="{{ true }}"
-				/>
-                				
-
-				<picker bindchange='goodsChange' value='{{index}}' range='{{goodsrange}}'>
-		
-                        <van-field
-				 data-key='goodstype'
-				 bind:input="inputValue"
-				 value="{{ goodsrange[index]}}"
-				 type="text"
-				 label="类型"
-				 placeholder="请选择类型"
-				 required
-				 border="{{ true }}"
-                 readonly
-				/>
-				
-				</picker>
-
-				<van-field
-				 data-key='goodsprice'
-				 bind:input="inputValue"
-				 value="{{ goodsprice }}"
-				 type="number"
-				 label="价格"
-				 placeholder="请输入价格"
-				 required
-				 border="{{ true }}"
-				/>
-
-                <van-field
-				 data-key='goodsversion'
-				 bind:input="inputValue"
-				 value="{{ goodversion }}"
-				 type="text"
-				 label="型号"
-				 placeholder="请输入型号"
-				 border="{{ true }}"
-				/>
-
-			</view>
-            <view class="fw-flex fw-margin-top-xs fw-c-c fw-fdc">
-  <view class='fw-flex fw-c-c'>
-  <textarea bindinput='textinput' placeholder="这里输入产品简介(1-200)" maxlength='200'/>    
+  <view id='publish' class='fw-flex fw-wrap fw-c-c' bindtap="publishnews">
+    <i-icon class='fw-w100 fw-text-c' type="praise_fill" size="22" color="#fff" />
+    <text class='fw-w100 fw-text-c' style='font-size:26rpx;'>上新</text>
   </view>
-  <scroll-view scroll-y="true" style='max-height:36vw'>
-  <view class='fw-margin-top-xs fw-flex fw-fdc'>
-    <image mode='aspectFit' wx:for="{{images}}" bindtap='previewImage' data-src='{{item}}' src="{{item}}" />
-  </view>  
+  <van-popup show="{{ showPopup }}" position="right" close-on-click-overlay overlay bind:click-overlay='closePopup'>
+    <view id='Popup'>
+
+      <view class='fw-flex fw-fdc fw-c-c' style='padding:10px;'>
+        <van-field data-key='goodsname' bind:input="inputValue" value="{{ goodsname}}" type="text" label="名称" placeholder="请输入产品名称" required border="{{ true }}" />
+
+
+        <picker bindchange='goodsChange' value='{{index}}' range='{{goodsrange}}'>
+
+          <van-field data-key='goodstype' bind:input="inputValue" value="{{ goodsrange[index]}}" type="text" label="类型" placeholder="请选择类型" required border="{{ true }}" readonly />
+
+        </picker>
+
+        <van-field data-key='goodsprice' bind:input="inputValue" value="{{ goodsprice }}" type="number" label="价格" placeholder="请输入价格" required border="{{ true }}" />
+        <van-field data-key='goodsstock' bind:input="inputValue" value="{{ goodsstock }}" type="number" label="库存" placeholder="请输入库存数量" required border="{{ true }}" />
+
+        <van-field data-key='goodsversion' bind:input="inputValue" value="{{ goodversion }}" type="text" label="型号" placeholder="请输入型号" border="{{ true }}" />
+
+      </view>
+      <view class="fw-flex fw-margin-top-xs fw-c-c fw-fdc">
+        <view class='fw-flex fw-c-c'>
+          <textarea bindinput='textinput' placeholder="这里输入产品简介(1-200)" maxlength='200' />
+        </view>
+        <scroll-view scroll-y="true" style='max-height:36vw'>
+          <view class='fw-margin-top-xs fw-flex fw-fdc'>
+            <image mode='aspectFit' wx:for="{{images}}" bindtap='previewImage' data-src='{{item}}' src="{{item}}" />
+          </view>
+        </scroll-view>
+        <view class='fw-flex fw-fdc fw-c-c' class='btn-group'>
+          <i-button bind:click="btnAdd" type="primary" shape="circle" size="default">添加图片</i-button>
+        </view>
+
+      </view>
+      <view class='fw-flex fw-fdc'>
+        <i-button bind:click="surePub" type="success" shape="circle" size="default">确认上新
+        </i-button>
+        <i-button bind:click="closePopup" type="default" shape="circle" size="default">关闭
+        </i-button>
+      </view>
+    </view>
+  </van-popup>
+  <scroll-view style='background-color:#f8f8f9; margin-bottom:51px;'>
+    <view class='fw-margin-top-xs'>
+      <view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
+        <view class='goods-item  fw-fdc' wx:for='{{goodsData}}' data-id='{{item.id}}'>
+          <image src='{{item.images[0]}}' mode='scaleTofill' />
+          <text class='goods-title'>{{item.name+item.version}}</text>
+          <view class='goods-detail fw-c-l'>
+            <text class='goods-price'>{{item.price}}</text>
+            <text class='goods-sell'>{{item.sold}}</text>
+          </view>
+
+        </view>
+      </view>
+    </view>
   </scroll-view>
-  <view class='fw-flex fw-fdc fw-c-c' class='btn-group'>
-		<i-button bind:click="btnAdd" type="primary" shape="circle" size="default" >添加图片</i-button>
-	</view>
-
 </view>
-			<view class='fw-flex fw-fdc'>
-				<i-button
-				 bind:click="surePub"
-				 type="success"
-				 shape="circle"
-				 size="default"
-				>确认上新
-				</i-button>
-				<i-button
-				 bind:click="closePopup"
-				 type="default"
-				 shape="circle"
-				 size="default"
-				>关闭
-				</i-button>
-			</view>
-		</view>
-	</van-popup>
-	<scroll-view style='background-color:#f8f8f9; margin-bottom:51px;'>
-		<view class='fw-margin-top-xs'>
-			<view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
-				<view class='goods-item  fw-fdc' wx:for='{{goodsData}}'>
-					<image src='{{item.src}}' mode='scaleTofill' />
-					<text class='goods-title'>{{item.title}}</text>
-					<view class='goods-detail fw-c-l'>
-						<text class='goods-price'>{{item.price}}</text>
-						<text class='goods-sell'>{{item.sell}}</text>
-					</view>
-
-				</view>
-			</view>
-		</view>
-	</scroll-view>
-</view>
-
