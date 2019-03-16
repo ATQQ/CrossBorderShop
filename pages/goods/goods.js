@@ -63,6 +63,18 @@ Page({
     })
 
   },
+  goodclick:function(res){
+    var id = res.currentTarget.dataset.id;
+    wx.setStorage({
+      key:'searchid',
+      data:id,
+      success:function (res) {
+        wx.navigateTo({
+          url:'../gooddetail/gooddetaill'
+        })
+      }
+    })
+  },
   updateGoods:function (content) {
     // 获取搜索的关键字
     var mode = 'search';

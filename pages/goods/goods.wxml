@@ -10,7 +10,7 @@
 				</block>	
 			</i-tabs>
 			<view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
-        		<view class='goods-item  fw-fdc' wx:for='{{goodsData}}' data-id='{{item.id}}'>
+        		<view class='goods-item  fw-fdc' wx:for='{{goodsData}}' data-id='{{item.id}}' bindtap="goodclick">
           		<image src='{{item.images[0]}}' mode='scaleTofill' />
           		<text class='goods-title'>{{item.name+item.version}}</text>
           		<view class='goods-detail fw-c-l'>

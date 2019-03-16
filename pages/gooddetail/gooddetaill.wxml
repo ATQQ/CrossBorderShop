@@ -1,0 +1,48 @@
+<!--pages/gooddetail/gooddetaill.wxml-->
+<!-- <text>pages/gooddetail/gooddetaill.wxml</text> -->
+
+<view class='fw-flex fw-bgc' wx:for="{{goodsData}}" wx:key="index">
+  <scroll-view scroll-y="true">
+    <!-- 图片区域 -->
+    <view>
+      <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{1000}}">
+        <block wx:for="{{goodsData[index].images}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" mode='scaleToFill' bindtap='preview' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 价格标题区域 -->
+    <view class='fw-flex fw-fdc fw-c-c area-panel' id='good-header'>
+    <!-- 价格 -->
+      <view>
+        <text id='price' class='fw-c-primary'>{{item.price}}</text>
+      </view>
+      <!-- 标题 ＋参数 -->
+      <view id='title' class='van-ellipsis'>
+        <text class='fw-text-c'>{{item.name+item.version}}</text>
+      </view>
+    <!-- 附加信息-->
+      <view id="addition" class='van-ellipsis fw-text-c'>
+        <text class='fw-text-c fw-c-SubColor'>销量{{item.sold}}</text>
+      </view>
+    </view>
+     <view class='fw-flex fw-c-sb area-panel fw-c-primary'>
+        <text >宝贝评价</text>
+        <text>></text>
+    </view>
+
+    <view class='fw-flex area-panel fw-ccontent'>
+        <text >{{item.detail}}</text>
+    </view>
+  </scroll-view>
+
+  <van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" />
+  <van-goods-action-icon icon="cart-o" text="购物车" info="5" />
+  <van-goods-action-icon icon="shop-o" text="店铺" />
+  <van-goods-action-button text="加入购物车" type="warning" />
+  <van-goods-action-button text="立即购买" />
+</van-goods-action>
+</view>

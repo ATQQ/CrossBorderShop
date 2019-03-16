@@ -1,6 +1,7 @@
 /**app.wxss**/
 @import "source/plunge/weui/style/weui.wxss";
 @import "source/plunge/vant/common/index.wxss";
+@import "source/plunge/fw/fw.wxss"
 .container {
   height: 100%;
   display: flex;

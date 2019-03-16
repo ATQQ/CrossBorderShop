@@ -196,7 +196,18 @@ Page({
 
 
   },
-
+  goodclick: function (res) {
+    var id = res.currentTarget.dataset.id;
+    wx.setStorage({
+      key: 'searchid',
+      data: id,
+      success: function (res) {
+        wx.navigateTo({
+          url: '../gooddetail/gooddetaill'
+        })
+      }
+    })
+  },
   clearInput: function () {
     this.setData({
       inputVal: ""

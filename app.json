@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/gooddetail/gooddetaill",
     "pages/index/index",
     "pages/newgoods/newgoods",
     "pages/communicate/communicate",
@@ -28,6 +29,9 @@
     "i-modal": "source/plunge/iview/modal/index",
     "van-field": "source/plunge/vant/field/index",
     "van-popup": "source/plunge/vant/popup/index",
-    "i-button": "source/plunge/iview/button/index"
+    "i-button": "source/plunge/iview/button/index",
+    "van-goods-action": "source/plunge/vant/goods-action/index",
+    "van-goods-action-icon": "source/plunge/vant/goods-action-icon/index",
+    "van-goods-action-button": "source/plunge/vant/goods-action-button/index"
   }
 }
