@@ -37,7 +37,7 @@ App({
     userInfo: null,
     current:'homepage',
     power:1,
-    baseUrl:'http://zj6sdt.natappfree.cc/CrossBorderBackstage/',
+    baseUrl:'http://localhost:8080/CrossBorderBackstage/',
     header:{
       'Cookie': ''
     }

@@ -10,11 +10,13 @@ Page({
     smallfuns:[
       {
         src: baseUrl + 'upload/images/find.png',
-        title:'码头'
+        title:'码头',
+        key:'matou'
       },
       {
         src: baseUrl + 'upload/images/shop.png',
-        title:'分类'
+        title:'分类',
+        key:'type'
       }
     ],
     bottomcurrent: '',
@@ -82,33 +84,35 @@ Page({
     noticeArray: ['111', 'asqee', 'fdfdg中文'],
     tabscurrent: 'tab1',
     tabscurrent_scroll: 'tab1',
-    goodsData:[
-      {
-        src:baseUrl +'upload/images/goods1.png',
-        title:'康艺JBYD-HT 点钞机',
-        price:1380,
-        sell:123
-      },
-      {
-        src: baseUrl +'upload/images/goods2.png',
-        title: '智利进口红酒',
-        price: 99,
-        sell: 532
-      }
-      ,{
-        src:baseUrl +'upload/images/goods3.png',
-        title:'爱他美（Aptamil） 澳新爱他美金装版 幼儿配方奶粉 3段（12-36个月） 900g',
-        price: 150,
-        sell: 139
-      }
-    ]
+    goodsData:[]
   },
   randomNumber:function () {
     return Math.floor(Math.random()*999); 
   },
   // 小功能列表
   test: function (res) {
-    console.log(res.currentTarget.dataset.key);
+    var fun = res.currentTarget.dataset.key;
+
+    switch (fun) {
+      case "type":
+        // 异步保存
+        wx.setStorage({
+          key: "searchkey",       //  设置key
+          data: 'home',     //  设置value
+          //  该函数保存成功时调用
+          success: function (res) {
+            console.log('异步成功保存了key-value值');
+            wx.navigateTo({
+              url: "../goods/goods"
+            })
+          }
+        })
+        break;
+    
+      default:
+        break;
+    }
+
   },
   tabsChangeScroll({ detail }) {
     this.setData({
@@ -134,50 +138,62 @@ Page({
   sureInput: function () {
     var val = this.data.inputVal;
     console.log('确定' + val);
-    var that=this;
-    var mode = 'home';
-    if(val==''||val==null){
-      mode = 'home';
-    }else{
-      mode = 'search';
-    }
-    wx.request({
-      url: baseUrl + 'goods/goods',
-      method: "GET",
-      header: requestHeader,
-      data: {
-        "mode": mode,
-        "content": val
-      },
-      success: function (res) {
-        console.log(res.data);
-        var data = res.data;
-
-        for (var i = 0; i < data.length; i++) {
-          if (data[i].images != '[]' || data[i].images.length > 10)
-            data[i].images = JSON.parse(data[i].images);
-          for (let j = 0; j < data[i].images.length; j++) {
-            data[i].images[j] = baseUrl + data[i].images[j];
-          }
-        }
-
-        that.setData({
-          goodsData: data
-        })
-      },
-      fail: function () {
-        wx.showToast({
-          title: '网络异常',
-          icon: "none",
-          duration: 2000
-        })
-      }
-    })
 
     this.setData({
       inputVal: "",
       inputShowed: false
     });
+    if(val==null||val==''){
+      return;
+    }else{
+      // 异步保存
+      wx.setStorage({
+        key: "searchkey",       //  设置key
+        data: val,     //  设置value
+        //  该函数保存成功时调用
+        success: function (res) {
+          console.log('异步成功保存了key-value值');
+          wx.navigateTo({
+            url: "../goods/goods"
+          })
+        }
+      })
+    }
+
+    // wx.request({
+    //   url: baseUrl + 'goods/goods',
+    //   method: "GET",
+    //   header: requestHeader,
+    //   data: {
+    //     "mode": mode,
+    //     "content": val
+    //   },
+    //   success: function (res) {
+    //     console.log(res.data);
+    //     var data = res.data;
+
+    //     for (var i = 0; i < data.length; i++) {
+    //       if (data[i].images != '[]' || data[i].images.length > 10)
+    //         data[i].images = JSON.parse(data[i].images);
+    //       for (let j = 0; j < data[i].images.length; j++) {
+    //         data[i].images[j] = baseUrl + data[i].images[j];
+    //       }
+    //     }
+
+    //     that.setData({
+    //       goodsData: data
+    //     })
+    //   },
+    //   fail: function () {
+    //     wx.showToast({
+    //       title: '网络异常',
+    //       icon: "none",
+    //       duration: 2000
+    //     })
+    //   }
+    // })
+
+
 
   },
 

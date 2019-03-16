@@ -1,6 +1,9 @@
 // pages/goods/goods.js
-Page({
+var app = getApp();
+var baseUrl = app.globalData.baseUrl;
+var requestHeader = app.globalData.header;
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -37,26 +40,7 @@ Page({
         title: "推荐"
       }
     ],
-    goodsData: [
-      {
-        src: '../../source/image/goods1.png',
-        title: '康艺JBYD-HT 点钞机',
-        price: 1380,
-        sell: 123
-      },
-      {
-        src: '../../source/image/goods2.png',
-        title: '智利进口红酒',
-        price: 99,
-        sell: 532
-      }
-      , {
-        src: '../../source/image/goods3.png',
-        title: '爱他美（Aptamil） 澳新爱他美金装版 幼儿配方奶粉 3段（12-36个月） 900g',
-        price: 150,
-        sell: 139
-      }
-    ]
+    goodsData: []
   },
 
   /**
@@ -64,8 +48,60 @@ Page({
    */
   onLoad: function (options) {
 
-  },
+    // 同步读取为null
+    // var content = wx.setStorageSync('searchkey');
+    // 异步读取
+    var content=null;
+    var that=this;
+    wx.getStorage({
+      key:"searchkey",
+      success:function(res){
+        console.log(res.data);
+        content=res.data;
+        that.updateGoods(content);
+      }
+    })
 
+  },
+  updateGoods:function (content) {
+    // 获取搜索的关键字
+    var mode = 'search';
+    if (content == null||content=='home'||content=='')
+      mode = 'home';
+    var that = this;
+    wx.request({
+      url: baseUrl + 'goods/goods',
+      method: "GET",
+      header: requestHeader,
+      data: {
+        "mode": mode,
+        "content": content
+      },
+      success: function (res) {
+        console.log(res.data);
+        var data = res.data;
+
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].images != '[]' || data[i].images.length > 10)
+            data[i].images = JSON.parse(data[i].images);
+          for (let j = 0; j < data[i].images.length; j++) {
+            data[i].images[j] = baseUrl + data[i].images[j];
+          }
+        }
+
+        that.setData({
+          goodsData: data
+        })
+      },
+      fail: function () {
+        wx.showToast({
+          title: '网络异常',
+          icon: "none",
+          duration: 2000
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

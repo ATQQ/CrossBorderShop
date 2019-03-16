@@ -2,6 +2,7 @@
 // pages/regist/regist.js
 var app = getApp();
 var baseUrl = app.globalData.baseUrl;
+var requestHeader = app.globalData.header;
 
 Page({
 

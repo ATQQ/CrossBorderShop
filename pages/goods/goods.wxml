@@ -10,15 +10,14 @@
 				</block>	
 			</i-tabs>
 			<view class='fw-flex fw-c-sb fw-warp fw-padding-default'>
-				<view class='goods-item  fw-fdc' wx:for='{{goodsData}}'>
-					<image src='{{item.src}}' mode='scaleTofill' />
-					<text class='goods-title'>{{item.title}}</text>
-					<view class='goods-detail fw-c-l'>
-						<text class='goods-price'>{{item.price}}</text>
-						<text class='goods-sell'>{{item.sell}}</text>
-					</view>
-				</view>
-                
+        		<view class='goods-item  fw-fdc' wx:for='{{goodsData}}' data-id='{{item.id}}'>
+          		<image src='{{item.images[0]}}' mode='scaleTofill' />
+          		<text class='goods-title'>{{item.name+item.version}}</text>
+          		<view class='goods-detail fw-c-l'>
+          		  <text class='goods-price'>{{item.price}}</text>
+          		  <text class='goods-sell'>{{item.sold}}</text>
+          		</view>
+        		</view>    
 			</view>
 		</view>
 	</scroll-view>

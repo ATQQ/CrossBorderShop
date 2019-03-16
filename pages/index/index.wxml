@@ -40,7 +40,7 @@
     </view>
     <!-- 小功能 -->
     <view class='fw-c-c fw-flex'>
-      <view class='fun-item' data-key='123' bindtap='test' wx:for="{{smallfuns}}">
+      <view class='fun-item'  bindtap='test' wx:for="{{smallfuns}}" data-key='{{item.key}}'>
         <image src='{{item.src}}' mode='scaleTofill' />
         <text>{{item.title}}</text>
       </view>
@@ -86,18 +86,8 @@
             <text class='goods-price'>{{item.price}}</text>
             <text class='goods-sell'>{{item.sold}}</text>
           </view>
-
         </view>
-        <!--
-				<view class='goods-item  fw-fdc'>
-					<image src='../../source/image/testpic.png' mode='scaleTofill' />
-					<text class='goods-title'>一个头像</text>
-					<view class='goods-detail fw-c-l'>
-						<text class='goods-price'>998</text>
-						<text class='goods-sell'>8888人购买</text>
-					</view>
-				</view>
-				-->
+
       </view>
     </view>
   </scroll-view>
